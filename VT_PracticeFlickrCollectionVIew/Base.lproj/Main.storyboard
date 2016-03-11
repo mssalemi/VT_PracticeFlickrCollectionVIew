@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -38,11 +37,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TmG-fs-1Qg">
+                                <rect key="frame" x="137" y="281" width="37" height="37"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Hi6-AL-TA4"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="TmG-fs-1Qg" id="aDl-nZ-AkM"/>
                         <outlet property="imageText" destination="xV3-fP-DVE" id="4VO-av-7Yt"/>
                         <outlet property="latitudeTextField" destination="gsn-Wb-NWv" id="lAV-Tt-dSW"/>
                         <outlet property="longitudeTextField" destination="Qlo-VU-1UJ" id="b04-xl-v2g"/>
@@ -80,11 +84,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-Nz-c9A">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
-                            </mapView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-KC-54x">
-                                <rect key="frame" x="0.0" y="204" width="310" height="364"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-KC-54x">
+                                <rect key="frame" x="0.0" y="334" width="310" height="234"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uvh-aL-wav">
                                     <size key="itemSize" width="139" height="123"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -118,18 +119,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-Nz-c9A">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zDV-Nz-c9A" firstAttribute="leading" secondItem="amI-N7-brl" secondAttribute="leadingMargin" constant="-20" id="1eh-UZ-GpL"/>
-                            <constraint firstItem="vxU-OR-C68" firstAttribute="top" secondItem="q0O-KC-54x" secondAttribute="bottom" id="COU-PV-m9n"/>
-                            <constraint firstItem="q0O-KC-54x" firstAttribute="top" secondItem="zDV-Nz-c9A" secondAttribute="bottom" constant="8" id="CTC-6E-Vl0"/>
-                            <constraint firstItem="q0O-KC-54x" firstAttribute="leading" secondItem="amI-N7-brl" secondAttribute="leadingMargin" constant="-20" id="MaS-sQ-xPG"/>
-                            <constraint firstItem="q0O-KC-54x" firstAttribute="top" secondItem="zDV-Nz-c9A" secondAttribute="bottom" constant="8" id="QzV-jC-dPK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zDV-Nz-c9A" secondAttribute="trailing" constant="-20" id="Uef-vY-m3k"/>
-                            <constraint firstItem="zDV-Nz-c9A" firstAttribute="top" secondItem="amI-N7-brl" secondAttribute="topMargin" id="oIA-7T-uBX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="q0O-KC-54x" secondAttribute="trailing" constant="-10" id="vfd-m4-qmq"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V7D-yv-o7l"/>
                     <connections>

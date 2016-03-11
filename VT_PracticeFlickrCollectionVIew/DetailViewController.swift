@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 import MapKit
 
-class DetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, MKMapViewDelegate {
+class DetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, MKMapViewDelegate,  CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let locationManager = CLLocationManager()
     
     var photos : [Photo]!
     var cordinates : CLLocationCoordinate2D!
@@ -22,8 +24,8 @@ class DetailViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.reloadData()
-        mapView.delegate = self
-        //mapView.setCenterCoordinate(cordinates, animated: true)
+        self.mapView.delegate = self
+        self.mapView.setCenterCoordinate(cordinates, animated: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -34,10 +36,8 @@ class DetailViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         print(cordinates)
         collectionView.reloadData()
-        mapView.centerCoordinate.longitude = cordinates.longitude
-        mapView.centerCoordinate.latitude = cordinates.latitude
-        mapView.setZoomByDelta(0.2, animated: true)
         print(mapView.centerCoordinate)
+        mapView.setZoomByDelta(0.1, animated: true)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

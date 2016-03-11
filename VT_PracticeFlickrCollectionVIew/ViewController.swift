@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var longitudeTextField: UITextField!
     @IBOutlet weak var latitudeTextField: UITextField!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBAction func go(sender: UIButton) {
         let long = Double(longitudeTextField.text!)
         let lat = Double(latitudeTextField.text!)
@@ -30,6 +31,8 @@ class ViewController: UIViewController {
     }
 
     func getImagesFromCordinate(long : Double, lat: Double){
+        
+        activityIndicator.startAnimating()
         
         print("Starting Request")
         let session = NSURLSession.sharedSession()
@@ -93,6 +96,7 @@ class ViewController: UIViewController {
                 cord = CLLocationCoordinate2DMake(Double(self.latitudeTextField.text!)!, Double(self.longitudeTextField.text!)!)
                 controller.cordinates = cord
                 self.navigationController!.pushViewController(controller, animated: true)
+                self.activityIndicator.stopAnimating()
             }
         }
         task.resume()
