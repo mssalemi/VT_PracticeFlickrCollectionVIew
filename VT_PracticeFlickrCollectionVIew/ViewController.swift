@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                     print("Cannot create dictionary")
                     return
             }
-            print(photosDictionary)
+            print(photosDictionary["pages"])
             
             /* GUARD: Are the "photos" and "photo" keys in our result? */
             guard let photoArray = photosDictionary[Constants.FlickrResponseKeys.Photo] as? [[String:AnyObject]] else {
@@ -76,25 +76,19 @@ class ViewController: UIViewController {
                 newPhoto.title = photo["title"] as! String
                 newPhoto.image = UIImage(data: NSData(contentsOfURL: NSURL(string: photo["url_m"] as! String)!)!)
                 photos.append(newPhoto)
-                print("\(photo["title"]!) at URL ->  \(photo["url_m"]!)")
-            }
-            
-            for photo in photos {
-                print(photo.title)
-                print(photo.image)
             }
             
             // Just for Testing to make sure the image Loaded Properly
             dispatch_async(dispatch_get_main_queue()) {
                 print("Updating image with \(photos[0].title)")
                 self.imageText.image = photos[0].image
-                
                 // Now Load new View Controller with Collection View Objects... Hopefully
                 let controller = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
                 controller.photos = photos
                 let
                 cord = CLLocationCoordinate2DMake(Double(self.latitudeTextField.text!)!, Double(self.longitudeTextField.text!)!)
                 controller.cordinates = cord
+                controller.pages = photosDictionary["pages"] as! Int
                 self.navigationController!.pushViewController(controller, animated: true)
                 self.activityIndicator.stopAnimating()
             }
@@ -112,6 +106,7 @@ class ViewController: UIViewController {
         urlString += "&" + Constants.FlickrParameterKeys.Format + "=" + Constants.FlickrParameterValues.ResponseFormat
         urlString += "&" + Constants.FlickrParameterKeys.NoJSONCallback + "=" + Constants.FlickrParameterValues.DisableJSONCallback
         urlString += "&" + Constants.FlickrParameterKeys.Extras + "=" + Constants.FlickrParameterValues.MediumURL
+        urlString += "&" + Constants.FlickrParameterKeys.PerPage + "=" + Constants.FlickrParameterValues.PerPage
         return urlString
     }
     

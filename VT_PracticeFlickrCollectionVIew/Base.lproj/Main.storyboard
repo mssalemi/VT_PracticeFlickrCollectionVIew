@@ -44,7 +44,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Hi6-AL-TA4"/>
+                    <navigationItem key="navigationItem" id="Hi6-AL-TA4">
+                        <barButtonItem key="backBarButtonItem" title="Ok" id="741-nS-ltJ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="TmG-fs-1Qg" id="aDl-nZ-AkM"/>
                         <outlet property="imageText" destination="xV3-fP-DVE" id="4VO-av-7Yt"/>
@@ -84,8 +86,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-Nz-c9A">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-kO-8R5">
+                                <rect key="frame" x="108" y="538" width="104" height="30"/>
+                                <state key="normal" title="New Collection"/>
+                                <connections>
+                                    <action selector="randomPhotos:" destination="Rv2-A0-sfd" eventType="touchUpInside" id="rVJ-aM-tg8"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="h0q-gY-UtX">
+                                <rect key="frame" x="42" y="543" width="20" height="20"/>
+                                <color key="color" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-KC-54x">
-                                <rect key="frame" x="0.0" y="334" width="310" height="234"/>
+                                <rect key="frame" x="0.0" y="233" width="320" height="288"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uvh-aL-wav">
                                     <size key="itemSize" width="139" height="123"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -119,14 +135,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-Nz-c9A">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="V7D-yv-o7l"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="h0q-gY-UtX" id="XH0-9Y-FYr"/>
                         <outlet property="collectionView" destination="q0O-KC-54x" id="mXy-bY-QJ4"/>
                         <outlet property="mapView" destination="zDV-Nz-c9A" id="R3f-3H-6ED"/>
                     </connections>
