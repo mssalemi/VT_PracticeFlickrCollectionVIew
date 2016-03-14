@@ -143,6 +143,7 @@
                         <outlet property="activityIndicator" destination="h0q-gY-UtX" id="XH0-9Y-FYr"/>
                         <outlet property="collectionView" destination="q0O-KC-54x" id="mXy-bY-QJ4"/>
                         <outlet property="mapView" destination="zDV-Nz-c9A" id="R3f-3H-6ED"/>
+                        <outlet property="newCollectionButton" destination="j7A-kO-8R5" id="hTP-nu-Z63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToU-oS-UIs" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481B0C801C94F5DE00A31CD6 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B0C7F1C94F5DE00A31CD6 /* FlickrClient.swift */; };
 		4820D00A1C90D38C0051B283 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820D0091C90D38C0051B283 /* AppDelegate.swift */; };
 		4820D00C1C90D38C0051B283 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820D00B1C90D38C0051B283 /* ViewController.swift */; };
 		4820D00F1C90D38C0051B283 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4820D00D1C90D38C0051B283 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		481B0C7F1C94F5DE00A31CD6 /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 		4820D0061C90D38C0051B283 /* VT_PracticeFlickrCollectionVIew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VT_PracticeFlickrCollectionVIew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4820D0091C90D38C0051B283 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4820D00B1C90D38C0051B283 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				4820D0151C90D38C0051B283 /* Info.plist */,
 				4820D0091C90D38C0051B283 /* AppDelegate.swift */,
 				4820D00D1C90D38C0051B283 /* Main.storyboard */,
+				481B0C7F1C94F5DE00A31CD6 /* FlickrClient.swift */,
 				4820D00B1C90D38C0051B283 /* ViewController.swift */,
 				4820D0391C922C750051B283 /* DetailViewController.swift */,
 				4820D03B1C9234750051B283 /* PhotoDetailCell.swift */,
@@ -270,6 +273,7 @@
 			files = (
 				4820D0401C9237CD0051B283 /* Photo.swift in Sources */,
 				4820D00C1C90D38C0051B283 /* ViewController.swift in Sources */,
+				481B0C801C94F5DE00A31CD6 /* FlickrClient.swift in Sources */,
 				4820D00A1C90D38C0051B283 /* AppDelegate.swift in Sources */,
 				4820D0381C90D4880051B283 /* Constants.swift in Sources */,
 				4820D03A1C922C750051B283 /* DetailViewController.swift in Sources */,
